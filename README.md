@@ -1,76 +1,75 @@
 # Personal Media Tracker
 
-This is a simple Python homework project made for beginners.
-It is a **command-line (CLI)** program that helps a user keep track of:
+Personal Media Tracker is a simple beginner-friendly Python CLI project.
+It lets a user save and manage movies, TV shows, and books in one SQLite database.
 
-- movies
-- TV shows
-- books
+This project is meant to feel like a homework assignment:
+- one Python file
+- one SQLite table
+- no external libraries
+- easy terminal menu
+- clear functions and simple input
 
-The program uses:
+---
 
-- Python
+## What this project does
+
+The program helps the user:
+- add a new media item
+- view all saved items
+- filter or sort the saved list
+- update an item
+- delete an item
+
+The data is stored in a local SQLite database file, so the records stay saved after the program closes.
+
+---
+
+## Tools used
+
+This project uses:
+- Python 3
 - the built-in `sqlite3` library
 - one SQLite table called `media`
 
----
-
-## Important note
-
-This project is **not a website**.
-It runs in the **terminal/command prompt**, not in GitHub Pages.
-
-That means:
-
-- GitHub is a good place to upload the code
-- GitHub Pages is **not** the right place to run this project
-- to use the program, you need to run the Python file locally
+No Flask, no tkinter, and no external packages are used.
 
 ---
 
-## Features
+## Media types supported
 
-The program includes full CRUD features:
+The program supports these media types:
+- `movie`
+- `tv show`
+- `book`
 
-### 1. Create
-Add a new media entry with:
-- title
-- media type
-- genre
-- platform or source
-- status
-- rating
-- notes
+For convenience, the user can also enter numbers when choosing media type:
+- `1` = `movie`
+- `2` = `tv show`
+- `3` = `book`
 
-### 2. Read
-- View all entries
-- Filter by media type (`movie`, `TV show`, or `book`)
-- Filter by status
-- Sort by rating from highest to lowest
-- Sort by title in alphabetical order
+If the user types `drama`, the program saves it as `tv show`.
 
-### 3. Update
-Update only:
-- status
-- rating
-- notes
+---
 
-### 4. Delete
-Delete an entry by id after confirmation.
+## Status values supported
+
+Suggested status values in the program:
+- `plan to start`
+- `in progress`
+- `completed`
 
 ---
 
 ## Database information
 
-The program automatically creates a database file named:
+When the program runs, it automatically creates a database file named:
 
 `media_tracker.db`
 
-It also automatically creates one table named:
+It also creates one table named `media` if the table does not already exist.
 
-`media`
-
-Schema used in the table:
+### Table schema
 
 - `id INTEGER PRIMARY KEY AUTOINCREMENT`
 - `title TEXT NOT NULL`
@@ -83,53 +82,9 @@ Schema used in the table:
 
 ---
 
-## Supported values
+## Main menu
 
-### Media types
-- `movie`
-- `tv show`
-- `book`
-
-You can also type:
-- `1` for `movie`
-- `2` for `tv show`
-- `3` for `book`
-
-If a user types `drama`, the program will save it as `tv show` to keep the filter options consistent.
-
-### Status values
-- `plan to start`
-- `in progress`
-- `completed`
-
----
-
-## How to run the program
-
-### Step 1: Make sure Python is installed
-You need Python 3 on your computer.
-
-### Step 2: Open the project folder in a terminal
-Go to the folder that contains:
-
-- `personal_media_tracker.py`
-
-### Step 3: Run the file
-Use this command:
-
-```bash
-python3 personal_media_tracker.py
-```
-
-If your computer uses `python` instead of `python3`, you can try:
-
-```bash
-python personal_media_tracker.py
-```
-
----
-
-## Menu shown in the program
+When the program starts, the user sees this menu:
 
 ```text
 --- Personal Media Tracker ---
@@ -143,7 +98,77 @@ python personal_media_tracker.py
 
 ---
 
-## Simple sample interaction
+## Features
+
+### 1. Add a media entry
+The user enters:
+- title
+- media type
+- genre
+- platform or source
+- status
+- rating
+- notes
+
+### 2. View all entries
+The program prints every saved record in a clear format.
+
+### 3. Filter or sort entries
+The user can:
+- filter by media type
+- filter by status
+- sort by rating from highest to lowest
+- sort by title in alphabetical order
+
+### 4. Update an entry
+The user enters an `id`, then updates only:
+- status
+- rating
+- notes
+
+### 5. Delete an entry
+The user enters an `id`, confirms the action, and the selected record is deleted.
+
+---
+
+## How to run the program
+
+### Step 1
+Make sure Python 3 is installed.
+
+### Step 2
+Open a terminal in the folder that contains:
+- `personal_media_tracker.py`
+
+### Step 3
+Run one of these commands:
+
+```bash
+python3 personal_media_tracker.py
+```
+
+or
+
+```bash
+python personal_media_tracker.py
+```
+
+---
+
+## Example of media type input
+
+When adding or filtering media, the program shows the choices clearly:
+
+```text
+Choose media type: 1 = movie, 2 = TV show, 3 = book
+Enter media type (movie/TV show/book or 1/2/3): 1
+```
+
+This means the user can either type the word or type the number.
+
+---
+
+## Sample interaction
 
 ```text
 --- Personal Media Tracker ---
@@ -171,36 +196,31 @@ Entry added successfully.
 
 ## Files in this project
 
-- `personal_media_tracker.py` -> the main Python program
-- `media_tracker.db` -> the SQLite database file created automatically when the program runs
+- `personal_media_tracker.py` - main Python program
+- `media_tracker.db` - SQLite database file created automatically after the program runs
+- `README.md` - project explanation and run instructions
 
 ---
 
-## Beginner-friendly notes
+## Beginner notes
 
 - The project uses functions to keep the code organized.
-- The database is created automatically.
+- The database and table are created automatically.
 - The program handles simple invalid input cases.
-- The media type filter supports `movie`, `tv show`, and `book`.
-- Users can type `1`, `2`, or `3` for media type, and the program always shows what each number means.
-- If there are no records, it clearly prints a message.
-- The output is designed to be easy to read in the terminal.
+- The program prints a message when no records are found.
+- Records are stored in SQLite, so they stay saved for later use.
+- The terminal output is kept simple and readable.
 
 ---
 
-## Why GitHub Pages looks blank
+## Important note about GitHub Pages
 
-If you upload this project and open it with GitHub Pages, you may see a blank page or nothing useful to click.
-That is normal because this project is a **CLI program**, not a webpage.
+This project is a **command-line program**, not a website.
+So if it is uploaded to GitHub and opened with GitHub Pages, it will not work like a clickable web app.
 
-GitHub Pages works for files like:
+GitHub Pages is for static web files such as:
 - HTML
 - CSS
 - JavaScript
 
-This project uses:
-- Python
-- sqlite3
-- terminal input/output
-
-So it should be run locally in a terminal, not as a GitHub Pages site.
+This project should be run locally in a terminal.
