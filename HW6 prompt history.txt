@@ -1,0 +1,24 @@
+I need a simple idea for a Python homework project using SQLite and CRUD. I want something beginner-friendly, not too complicated, and easy to explain in a short demo video. Please suggest a few project ideas.
+I am interested in building a media tracker. I want to track movies, TV shows, and books in one place. Can you help me decide whether this is a good SQLite CRUD project for a beginner?
+I am building a Python CLI app called Personal Media Tracker. It should use one SQLite table to track movies, TV shows, and books. Please help me design a simple table schema with beginner-friendly fields.
+For my Personal Media Tracker project, I want these fields: id, title, media_type, genre, platform_or_source, status, rating, and notes. Can you suggest the SQLite data types for each field and explain why?
+Please write a beginner-friendly Python function using sqlite3 that creates a table called media for my Personal Media Tracker project. The table should include id, title, media_type, genre, platform_or_source, status, rating, and notes.
+Please help me write a simple Python function called add_entry() for my CLI SQLite project. It should ask the user for title, media type, genre, platform or source, status, rating, and notes, and then insert the entry into the media table.
+Please help me write a Python function called view_all_entries() that reads all rows from my SQLite media table and prints them clearly in the terminal. If there are no entries, it should print a simple message.
+My homework requires the Read part of CRUD to do more than just show all rows. For my Personal Media Tracker project, what are some simple filter or sort options I can add that would work well in a CLI app?
+Please help me write a Python function called filter_or_sort_entries() for my Personal Media Tracker project. I want a small menu that lets the user:
+1. filter by media type
+2. filter by status
+3. sort by rating from highest to lowest
+4. sort by title alphabetically
+Please keep the code simple and beginner-friendly.
+Please help me write a Python function called update_entry() for my SQLite CLI project. The user should enter the id of an existing entry and then update the status, rating, and notes fields. Please keep it simple and suitable for a beginner.
+Please help me write a Python function called delete_entry() for my SQLite CLI project. The user should enter the id of the entry they want to delete, and the program should ask for confirmation before deleting it.
+Please help me write a main menu loop for my Python CLI project called Personal Media Tracker. The menu should include:
+1. Add a media entry
+2. View all entries
+3. Filter or sort entries
+4. Update an entry
+5. Delete an entry
+6. Quit
+Here is my current Python code for my Personal Media Tracker project. Please help me find bugs, explain the errors simply, and suggest small fixes without rewriting the whole project.
